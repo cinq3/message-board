@@ -10,12 +10,17 @@
     <% end %>
   </div>
 </div>
-
+<div class="container">
 <%= form_for(Message.new) do |f| %>
-  名前:
-  <%= f.text_field :name %>
+<div class=" form-group">
+  <label class="control-label col-sm-2" for="name" style="text-align: right;">名前:</label>
+  <div class="col-sm-10" style="margin-bottom:10px;"><%= f.text_field :name %></div>
+  <label class="control-label col-sm-2" for="body" style="text-align: right;">内容:</label></label>
+  <div class="col-sm-10"><%= f.text_area :body, :size => "50x10" %></div>
+  <div class="col-sm-offset-2 col-sm-10">
+   <%= f.submit class: "btn btn-sm btn-primary" %>
+  </div>
+</div>
 
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit %>
 <% end %>
+</div>
